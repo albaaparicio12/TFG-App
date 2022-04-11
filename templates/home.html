@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block head %}
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .home-container {
+      padding: 60px 15px 0;
+      padding-top: 90px;
+      padding-bottom: 90px;
+      background-color: #DBCCAA;
+      color: #3F372B;
+      font-size: 18px;
+      border: 150px solid;
+      text-align: center;
+      border-color:#FAF1E3
+}
+
+</style>
+
+{% endblock head %}
+
+{% block content %}
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="home-container">
+        <h1 class="mt-5"> Machine Learning Cuántico</h1>
+        <button type="button" class="btn btn-outline-primary me-2">QSVM</button>
+        <button type="button" class="btn btn-outline-primary me-2">QNN</button>
+    </div>
+</main>
+
+
+</div>
+{% endblock content %}
