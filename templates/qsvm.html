@@ -27,10 +27,10 @@
     }
 
     .hstack {
-    flex-direction: column;
-    align-items: baseline;
-    align-self: center;
-}
+        flex-direction: column;
+        align-items: baseline;
+        align-self: center;
+    }
 
 </style>
 
@@ -41,22 +41,12 @@
 <main class="flex-shrink-0">
     <div class="home-container">
         <div class="row">
-            <H1 style="text-align:center">Ejecución</H1>
+            <H1 style="text-align:center">QSVM</H1>
         </div>
         <form action="#" method="post" class="hstack gap-3">
             <div class="row">
                 <div class="col">
-                    <p>Token: </p>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="exampleFormControlInput1">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p>Dispositivo: </p>
+                    <p>Datos: </p>
                 </div>
                 <div class="col">
                     <select name=datos method="GET" action="/" value="submit">
@@ -68,21 +58,27 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <p>Nº ejecuciones: </p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                        <label class="form-check-label" for="exampleRadios1">
+                        Local
+                        </label>
+                    </div>
                 </div>
                 <div class="col">
-                    <div class="form-outline">
-                        <input type="number" id="typeNumber" class="form-control" />
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                        IBM
+                        </label>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <a href="/"><button id="cancelBtn" type="button" class="btn btn-outline-primary me-2">Cancelar</button></a></div>
+                    <a href="/"><button id="atQnnBtn" type="button" class="btn btn-outline-primary me-2">Atrás</button></a></div>
                 <div class="col">
-                <button id="atBtn" type="button" class="btn btn-outline-primary me-2">Atrás</button></div>
-                <div class="col">
-                <button id="sigBtn" type="button" class="btn btn-outline-primary me-2">Siguiente</button></div>  
+                <button id="sigQnnmBtn" type="button" class="btn btn-outline-primary me-2">Siguiente</button></div>
             </div>
 
         </form>

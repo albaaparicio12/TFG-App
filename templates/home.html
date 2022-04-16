@@ -24,11 +24,11 @@
       font-size: 18px;
       border: 150px solid;
       text-align: center;
-      border-color:#FAF1E3
-}
+      border-color:#FAF1E3;
+    }
+
 
 </style>
-
 {% endblock head %}
 
 {% block content %}
@@ -36,8 +36,10 @@
 <main class="flex-shrink-0">
     <div class="home-container">
         <h1 class="mt-5"> Machine Learning Cuántico</h1>
-        <button type="button" class="btn btn-outline-primary me-2">QSVM</button>
-        <button type="button" class="btn btn-outline-primary me-2">QNN</button>
+        <div class="hstack gap-2">            
+            <a  href="/qsvm"><button id="qsvmBtn" type="button" class="btn btn-outline-primary me-2">QSVM</button></a>
+            <a  href="/qnn"><button id="qnnBtn" type="button" class="btn btn-outline-primary me-2">QNN</button></a>
+        </div>
     </div>
 </main>
 
