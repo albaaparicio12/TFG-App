@@ -43,14 +43,14 @@
         <div class="row">
             <H1 style="text-align:center">Ejecución</H1>
         </div>
-        <form action="#" method="post" class="hstack gap-3">
+        <form method="post" class="hstack gap-3">
             <div class="row">
                 <div class="col">
                     <p>Token: </p>
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <input type="email" class="form-control" id="exampleFormControlInput1">
+                        <input type="email" class="form-control" id="exampleFormControlInput1" name="token">
                     </div>
                 </div>
             </div>
@@ -59,9 +59,10 @@
                     <p>Dispositivo: </p>
                 </div>
                 <div class="col">
-                    <select name=datos method="GET" action="/" value="submit">
-                        {% for dato in datos %}
-                        <option value= "{{dato}}" SELECTED>{{datos}}</option>"
+                    <select name=dispositivo method="GET" action="/" value="submit">
+                        {% for dispositivo in dispositivos %}
+                        <option value="{{dispositivo}}" SELECTED>{{dispositivo}}</option>
+                        "
                         {% endfor %}
                     </select>
                 </div>
@@ -72,7 +73,7 @@
                 </div>
                 <div class="col">
                     <div class="form-outline">
-                        <input type="number" id="typeNumber" class="form-control" />
+                        <input type="number" id="typeNumber" name="nEjecuciones" class="form-control" min="1"/>
                     </div>
                 </div>
             </div>
@@ -80,7 +81,9 @@
                 <div class="col">
                     <a href="/"><button id="cancelBtn" type="button" class="btn btn-outline-primary me-2">Cancelar</button></a></div>
                 <div class="col">
-                <button id="atBtn" type="button" class="btn btn-outline-primary me-2">Atrás</button></div>
+                    <a href="/{{tipo}}/">
+                        <button id="atBtn" type="button" class="btn btn-outline-primary me-2">Atrás</button>
+                    </a></div>
                 <div class="col">
                 <button id="sigBtn" type="button" class="btn btn-outline-primary me-2">Siguiente</button></div>  
             </div>

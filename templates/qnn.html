@@ -43,7 +43,7 @@
         <div class="row">
             <H1 style="text-align:center">QNN</H1>
         </div>
-        <form action="#" method="post" class="hstack gap-3">
+        <form action="/ejecucion" method="GET" class="hstack gap-3">
             <div class="row">
                 <div class="col">
                     <p>Datos: </p>
@@ -51,7 +51,8 @@
                 <div class="col">
                     <select name=datos method="GET" action="/" value="submit">
                         {% for dato in datos %}
-                        <option value= "{{dato}}" SELECTED>{{datos}}</option>"
+                        <option value="{{dato}}" SELECTED>{{dato}}</option>
+                        "
                         {% endfor %}
                     </select>
                 </div>
@@ -59,7 +60,8 @@
             <div class="row">
                 <div class="col">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                        <input class="form-check-input" type="radio" name="tipoEjecucion" id="exampleRadios1"
+                               value="local" checked>
                         <label class="form-check-label" for="exampleRadios1">
                         Local
                         </label>
@@ -67,7 +69,8 @@
                 </div>
                 <div class="col">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <input class="form-check-input" type="radio" name="tipoEjecucion" id="exampleRadios2"
+                               value="ibm">
                         <label class="form-check-label" for="exampleRadios2">
                         IBM
                         </label>
@@ -78,7 +81,10 @@
                 <div class="col">
                     <a href="/"><button id="atQnnBtn" type="button" class="btn btn-outline-primary me-2">Atrás</button></a></div>
                 <div class="col">
-                <button id="sigQnnmBtn" type="button" class="btn btn-outline-primary me-2">Siguiente</button></div>
+                    <button id="sigQnnmBtn" type="submit" name="tipo" value="qnn" class="btn btn-outline-primary me-2">
+                        Siguiente
+                    </button>
+                </div>
             </div>
 
         </form>
