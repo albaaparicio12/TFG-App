@@ -9,19 +9,19 @@ def index():
 
 @app.route('/qsvm/', methods=["POST", "GET"])
 def qsvm():
-    datos = ['Red', 'Blue', 'Black', 'Orange']
+    datos = ['ad_hoc_data', 'breast_cancer', 'digits', 'gaussian', 'iris', 'wine']
     return render_template('qsvm.html', datos=datos)
 
 
 @app.route('/qnn/', methods=["POST", "GET"])
 def qnn():
-    datos = ['Red', 'Blue', 'Black', 'Orange']
+    datos = ['ad_hoc_data', 'breast_cancer', 'digits', 'gaussian', 'iris', 'wine']
     return render_template('qnn.html', datos=datos)
 
 
 @app.route('/ejecucion', methods=["POST", "GET"])
 def ejecucion():
-    dispositivos = ['Red1', 'Blue2', 'Black3', 'Orange4']
+    dispositivos = ['statevector (32 qubits)', 'ibmq_qasm (32 qubits)', 'extended_stabilizer (63 qubits)', 'mps (100 qubits)', 'stabilizer (5000 qubits)']
     if request.method == 'GET':
         datos = request.args.get('datos')
         tipoEjecucion = request.args.get('tipoEjecucion')

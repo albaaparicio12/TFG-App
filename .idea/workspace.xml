@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57a9eb2a-515d-4b54-abc3-1c385f978290" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ejecucion.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ejecucion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/qnn.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/qnn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/qsvm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/qsvm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +39,31 @@
       <option name="presentableId" value="Default" />
       <updated>1649699731989</updated>
     </task>
+    <task id="LOCAL-00001" summary="Linked forms in qsvm and qnn">
+      <created>1650799049132</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650799049132</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Linked forms in qsvm and qnn" />
+    <option name="LAST_COMMIT_MESSAGE" value="Linked forms in qsvm and qnn" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="614" y="115" key="CommitChangelistDialog2" timestamp="1650799047802">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="614" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1650799047802" />
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1650799324384">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1650799324384" />
     <state x="1136" y="356" key="com.intellij.ide.util.TipDialog" timestamp="1650795612415">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

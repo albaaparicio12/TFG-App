@@ -43,8 +43,8 @@
         <div class="row">
             <H1 style="text-align:center">Ejecución</H1>
         </div>
-        <form method="post" class="hstack gap-3">
-            <div class="row">
+        <form action="/resumen" method="post" class="hstack gap-3">
+            <div class="row" id="token-group">
                 <div class="col">
                     <p>Token: </p>
                 </div>
@@ -54,7 +54,19 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <script>
+                const params = new URLSearchParams(window.location.search)
+                var tipoEjecucion = params.get("tipoEjecucion");
+                var elem = document.getElementById('token-group');
+                if (tipoEjecucion == 'ibm'){
+                    elem.style.visibility = 'visible';
+                    elem.style.display = 'block';
+                }else{
+                    elem.style.visibility = 'hidden';
+                    elem.style.display = 'none';
+                }
+            </script>
+            <div class="row" id="dispositivo-group">
                 <div class="col">
                     <p>Dispositivo: </p>
                 </div>
@@ -67,6 +79,17 @@
                     </select>
                 </div>
             </div>
+            <script>
+                var tipoEjecucion = params.get("tipoEjecucion");
+                var elem = document.getElementById('dispositivo-group');
+                if (tipoEjecucion == 'local'){
+                    elem.style.visibility = 'visible';
+                    elem.style.display = 'block';
+                }else{
+                    elem.style.visibility = 'hidden';
+                    elem.style.display = 'none';
+                }
+            </script>
             <div class="row">
                 <div class="col">
                     <p>Nº ejecuciones: </p>
