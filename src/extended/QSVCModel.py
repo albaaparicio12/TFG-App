@@ -85,3 +85,6 @@ class QSVCModel(QuantumModel, ABC):
         # Evalaute the test accuracy
         accuracy_test = metrics.balanced_accuracy_score(y_true=y_test, y_pred=labels_test)
         print(f"accuracy test: {accuracy_test}")
+
+        print(y_test)
+        print(labels_test)
