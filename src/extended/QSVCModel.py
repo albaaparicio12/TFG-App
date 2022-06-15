@@ -31,13 +31,16 @@ algorithm_globals.random_seed = seed
 
 class QSVCModel(QuantumModel, ABC):
 
-    def __init__(self, train_features, train_labels, test_features, test_labels, quantum_instance, n_executions) -> None:
+    def __init__(self, dataset, quantum_instance, n_executions, backend) -> None:
         
-        super(QSVCModel, self).__init__(train_features, train_labels, test_features, test_labels, quantum_instance, n_executions)
+        super(QSVCModel, self).__init__(dataset, quantum_instance, n_executions, backend)
     
     
     @doc_inherit(QuantumModel.createModel, style="google")
     def run(self):
+        # Get dataset
+        X_train, y_train, X_test, y_test = self.dataset.get_data()
+
         # Define the Quantum Feature Map
         # Create a rotational layer to train. We will rotate each qubit the same amount.
         user_params = ParameterVector("θ", 1)
@@ -54,11 +57,8 @@ class QSVCModel(QuantumModel, ABC):
         print(circuit_drawer(fm))
         print(f"Trainable parameters: {user_params}")
         
-        # Use the statevector simulator backend
-        backend = AerSimulator(method="statevector")
-
         # Instantiate quantum kernel
-        quantum_kernel = QuantumKernel(fm, user_parameters=user_params, quantum_instance=backend)
+        quantum_kernel = QuantumKernel(fm, user_parameters=user_params, quantum_instance=self._backend)
 
         """
         Since no analytical gradient is defined for kernel loss functions, gradient-based optimizers are not recommended for training kernels.
