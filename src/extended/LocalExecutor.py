@@ -12,7 +12,7 @@ class LocalExecutor(Executor):
     @doc_inherit(Executor.create_backend, style="google")
     def create_backend(self):
         Validator.check_local_device(self.device)
-        Validator.check_n_executions(self.n_executions)
+        Validator.check_n_executions(int(self.n_executions))
 
         seed = 0
         backend = BasicAer.get_backend(self.device)

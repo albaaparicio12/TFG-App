@@ -47,9 +47,9 @@ class QMLAlgorithm:
 
     def create_quantum_instance(self):
         if self.execution_type == 'local':
-            backend, quantum_instance = LocalExecutor(self.device + "_simulator", self.n_executions).createBackend()
+            backend, quantum_instance = LocalExecutor(self.device + "_simulator", self.n_executions).create_backend()
         elif self.execution_type == 'ibm':
-            backend, quantum_instance = IBMExecutor(self.token, self.n_executions).createBackend()
+            backend, quantum_instance = IBMExecutor(self.token, self.n_executions).create_backend()
         else:
             raise ValueError("The execution type is invalid.")
         return backend, quantum_instance

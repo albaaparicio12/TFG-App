@@ -47,7 +47,6 @@
             <div class="row" id="token-group">
                 <div class="col">
                     <p>Token: </p>
-                    <div name="dataset" value={{dataset}}></div>
                 </div>
                 <div class="col">
                     <div class="form-group">
@@ -111,10 +110,17 @@
                         <button id="atBtn" type="button" class="btn btn-outline-primary me-2">Atrás</button>
                     </a></div>
                 <div class="col">
-                    <button id="sigBtn" type="submit" name="model" value={{model}} class="btn btn-outline-primary me-2">
+                    <button id="sigBtn" type="submit" name="dataset_model" value={{model}}
+                            class="btn btn-outline-primary me-2">
                         Siguiente
                     </button>
                 </div>
+                <script>
+                    model = params.get("model");
+                    dataset = params.get("dataset");
+                    var elem = document.getElementById('sigBtn');
+                    elem.value = dataset + "," + model
+                </script>
             </div>
 
         </form>

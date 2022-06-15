@@ -19,7 +19,7 @@ class IBMExecutor(Executor):
     @doc_inherit(Executor.create_backend, style="google")
     def create_backend(self):
         Validator.check_token(self.token)
-        Validator.check_n_executions(self.n_executions)
+        Validator.check_n_executions(int(self.n_executions))
 
         IBMQ.save_account(self.token, overwrite=True)
         IBMQ.load_account()
