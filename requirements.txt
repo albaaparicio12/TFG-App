@@ -2,6 +2,7 @@ flask
 pandas
 numpy
 matplotlib
-pylab
+custom_inherit
+IPython
 qiskit==0.36.2
 qiskit-machine-learning==0.3.1

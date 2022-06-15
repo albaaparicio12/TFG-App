@@ -1,40 +1,25 @@
+from sklearn import metrics
 import matplotlib.pyplot as plt
-import numpy as np
-from qiskit import BasicAer
-# import the feature map and ansatz circuits
-from qiskit.circuit.library import ZZFeatureMap, RealAmplitudes
-from qiskit.utils import QuantumInstance, algorithm_globals
-from qiskit_machine_learning.datasets import ad_hoc_data
 from qiskit_machine_learning.algorithms import NeuralNetworkClassifier
-from qiskit.providers.basicaer import QasmSimulatorPy
-# import the optimizer for the training
-from qiskit.algorithms.optimizers import GradientDescent
-# import backend
-from qiskit import BasicAer
+from qiskit_machine_learning.neural_networks import TwoLayerQNN
+# Import the optimizer for training the quantum kernel
+from qiskit.algorithms.optimizers import COBYLA
+from IPython.display import clear_output
+from src.base.QuantumModel import QuantumModel
+from custom_inherit import doc_inherit
 
-import QuantumModel
-from abc import ABC
-from custom_inherit import  doc_inherit
 
-seed = 10599
-algorithm_globals.random_seed = seed
+class QNNModel(QuantumModel):
 
-class QNNModel(QuantumModel, ABC):
+    def __init__(self, dataset, quantum_instance, n_executions, backend) -> None:
+        super(QNNModel, self).__init__(dataset, quantum_instance, n_executions, backend)
 
-    def __init__(self, X_train, y_train, X_test, y_test, quantum_instance, n_executions) -> None:
-        
-        super(QNNModel, self).__init__(X_train, y_train, X_test, y_test, quantum_instance, n_executions)
-    
-
-    @doc_inherit(QuantumModel.createModel, style="google")
-    def createModel(self):
-    
-    @doc_inherit(QuantumModel.createModel, style="google")
+    @doc_inherit(QuantumModel.run, style="google")
     def run(self):
         # Get dataset
         X_train, y_train, X_test, y_test = self.dataset.get_data()
-        
-        num_qubits = 2        
+
+        num_qubits = 2
         opflow_qnn = TwoLayerQNN(num_qubits, quantum_instance=self._quantum_instance)
 
         # construct neural network classifier
@@ -56,7 +41,7 @@ class QNNModel(QuantumModel, ABC):
         # Evalaute the test accuracy
         accuracy_test = metrics.balanced_accuracy_score(y_true=y_test, y_pred=labels_test)
         print(f"accuracy test: {accuracy_test}")
-
+        return accuracy_test
     
     def callback_graph(weights, obj_func_eval):
         """

@@ -1,11 +1,10 @@
 from pylab import cm
 from sklearn import metrics
-from abc import ABC
 from custom_inherit import  doc_inherit
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import QuantumModel
+from src.base.QuantumModel import QuantumModel
 
 # Package to evaluate model performance
 from sklearn import metrics
@@ -25,18 +24,12 @@ from qiskit.algorithms.optimizers import SPSA
 from qiskit_machine_learning.algorithms import QSVC, PegasosQSVC
 
 
-
-seed = 10599
-algorithm_globals.random_seed = seed
-
-class QSVCModel(QuantumModel, ABC):
+class QSVCModel(QuantumModel):
 
     def __init__(self, dataset, quantum_instance, n_executions, backend) -> None:
-        
         super(QSVCModel, self).__init__(dataset, quantum_instance, n_executions, backend)
-    
-    
-    @doc_inherit(QuantumModel.createModel, style="google")
+
+    @doc_inherit(QuantumModel.run, style="google")
     def run(self):
         # Get dataset
         X_train, y_train, X_test, y_test = self.dataset.get_data()
@@ -88,3 +81,4 @@ class QSVCModel(QuantumModel, ABC):
 
         print(y_test)
         print(labels_test)
+        return accuracy_test

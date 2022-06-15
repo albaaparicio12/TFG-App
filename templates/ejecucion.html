@@ -47,6 +47,7 @@
             <div class="row" id="token-group">
                 <div class="col">
                     <p>Token: </p>
+                    <div name="dataset" value={{dataset}}></div>
                 </div>
                 <div class="col">
                     <div class="form-group">
@@ -102,13 +103,18 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <a href="/"><button id="cancelBtn" type="button" class="btn btn-outline-primary me-2">Cancelar</button></a></div>
+                    <a href="/">
+                        <button id="cancelBtn" type="button" class="btn btn-outline-primary me-2">Cancelar</button>
+                    </a></div>
                 <div class="col">
-                    <a href="/{{tipo}}/">
+                    <a href="/{{model}}/">
                         <button id="atBtn" type="button" class="btn btn-outline-primary me-2">Atrás</button>
                     </a></div>
                 <div class="col">
-                <button id="sigBtn" type="submit" class="btn btn-outline-primary me-2">Siguiente</button></div>  
+                    <button id="sigBtn" type="submit" name="model" value={{model}} class="btn btn-outline-primary me-2">
+                        Siguiente
+                    </button>
+                </div>
             </div>
 
         </form>
