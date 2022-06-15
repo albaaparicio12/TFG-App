@@ -15,7 +15,7 @@ def qsvm():
 
 @app.route('/qnn/', methods=["POST", "GET"])
 def qnn():
-    datos = ['ad_hoc_data', 'breast_cancer', 'digits', 'gaussian', 'iris', 'wine']
+    datos = ['ad_hoc_data', 'breast_cancer', 'digits', 'gaussian']
     return render_template('qnn.html', datos=datos)
 
 
@@ -29,3 +29,7 @@ def ejecucion():
         tipoEjecucion = "Local"
         datos = "básico"
     return render_template('ejecucion.html', datos=datos, tipoEjecucion=tipoEjecucion, dispositivos=dispositivos)
+
+@app.route('/resumen', methods=["POST", "GET"])
+def resumen():
+    return render_template('resumen.html')

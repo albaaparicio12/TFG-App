@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block head %}
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .home-container {
+      padding: 60px 30px 0;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      background-color: #DBCCAA;
+      color: #3F372B;
+      font-size: 18px;
+      border: 150px solid;
+      border-color:#FAF1E3;
+    }
+
+    .hstack {
+    flex-direction: column;
+    align-items: baseline;
+    align-self: center;
+}
+
+</style>
+
+{% endblock head %}
+
+{% block content %}
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+    <div class="home-container">
+        <div class="row">
+            <H1 style="text-align:center">Salida</H1>
+        </div>
+        <div class="row">
+            <textarea id="salida" name="salida" rows="4" cols="50" readonly>
+            </textarea>
+        </div>
+    </div>
+</main>
+
+
+</div>
+{% endblock content %}
