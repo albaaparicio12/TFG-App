@@ -1,33 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="57a9eb2a-515d-4b54-abc3-1c385f978290" name="Default Changelist" comment="">
+    <list default="true" id="57a9eb2a-515d-4b54-abc3-1c385f978290" name="Default Changelist" comment="Datasets only with binary classes&#10;Deleted property token&#10;New InvalidTokenError and InvalidValueError&#10;Deleted n_executions from QuantumModel&#10;Added validation of token in ibm execution&#10;Execution shots now with n_executions&#10;Added output of models&#10;Added documentacion, contact and error page&#10;Added unit tests&#10;Now use new simulators">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/files/TFG.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/files/yo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/contacto.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/documentacion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_Dataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_IBMExecutor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_LocalExecutor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_QMLAlgorithm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_QuantumModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/flask.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flask.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QMLAlgorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/QMLAlgorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/Executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/QuantumModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/QuantumModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/Validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extended/IBMExecutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/extended/IBMExecutor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extended/LocalExecutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/extended/LocalExecutor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extended/QNNModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/extended/QNNModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/extended/QSVCModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/extended/QSVCModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ejecucion.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ejecucion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/resumen.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resumen.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Unit Test" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="df132283-840b-4145-a1f5-25d5d1e0eeb7" />
+        <option name="url" value="https://github.com/albaaparicio12/TFG-App.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27f8MSxssBHh0BT5Q0s17EcbrKM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Home/OneDrive/Escritorio/TFG/TFG-App/test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Home\OneDrive\Escritorio\TFG\TFG-App\test" />
+      <recent name="C:\Users\Home\OneDrive\Escritorio\TFG\TFG-App\templates" />
       <recent name="C:\Users\Home\OneDrive\Escritorio\flask\templates" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Home\OneDrive\Escritorio\TFG\TFG-App" />
+      <recent name="C:\Users\Home\OneDrive\Escritorio\TFG\TFG-App\src\base" />
+      <recent name="C:\Users\Home\OneDrive\Escritorio\TFG\TFG-App\static\files" />
+      <recent name="C:\Users\Home\OneDrive\Escritorio\TFG\TFG-App\static" />
+      <recent name="C:\Users\Home\OneDrive\Escritorio\TFG\TFG-App\src" />
+    </key>
   </component>
+  <component name="RunManager" selected="Python tests.Python tests in test">
+    <configuration name="Flask (app.py:app)" type="Python.FlaskServer" nameIsGenerated="true">
+      <option name="application" value="app" />
+      <option name="flaskDebug" value="true" />
+      <module name="flask" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\Home\OneDrive\Escritorio\TFG\TFG-App\env\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="software.aws.toolkits.jetbrains.core.execution.PythonAwsConnectionExtension">
+        <option name="credential" />
+        <option name="region" />
+        <option name="useCurrentConnection" value="false" />
+      </EXTENSION>
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_IBMExecutor.test_create_backend_n_executions_less_than_0" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="flask" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_IBMExecutor.test_create_backend_n_executions_less_than_0&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_IBMExecutor.test_create_backend_n_executions_more_than_20000" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="flask" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_IBMExecutor.test_create_backend_n_executions_more_than_20000&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="flask" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_IBMExecutor.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="flask" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_IBMExecutor.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_QMLAlgorithm.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="flask" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_QMLAlgorithm.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests in test" />
+        <item itemvalue="Python tests.Python tests for test_IBMExecutor.test_create_backend_n_executions_more_than_20000" />
+        <item itemvalue="Python tests.Python tests for test_IBMExecutor.test_create_backend_n_executions_less_than_0" />
+        <item itemvalue="Python tests.Python tests in test_IBMExecutor.py" />
+        <item itemvalue="Python tests.Python tests in test_QMLAlgorithm.py" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -38,6 +225,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1649699731989</updated>
+      <workItem from="1655397105409" duration="9960000" />
+      <workItem from="1655443053549" duration="8736000" />
+      <workItem from="1655569701818" duration="6453000" />
+      <workItem from="1655638896236" duration="5377000" />
+      <workItem from="1655662477408" duration="8000" />
+      <workItem from="1655669001334" duration="1342000" />
+      <workItem from="1655725793027" duration="7717000" />
+      <workItem from="1655794314880" duration="17617000" />
+      <workItem from="1655884122454" duration="14760000" />
     </task>
     <task id="LOCAL-00001" summary="Linked forms in qsvm and qnn">
       <created>1650799049132</created>
@@ -49,24 +245,52 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Linked forms in qsvm and qnn" />
-    <option name="LAST_COMMIT_MESSAGE" value="Linked forms in qsvm and qnn" />
+    <MESSAGE value="Datasets only with binary classes&#10;Deleted property token&#10;New InvalidTokenError and InvalidValueError&#10;Deleted n_executions from QuantumModel&#10;Added validation of token in ibm execution&#10;Execution shots now with n_executions&#10;Added output of models&#10;Added documentacion, contact and error page&#10;Added unit tests&#10;Now use new simulators" />
+    <option name="LAST_COMMIT_MESSAGE" value="Datasets only with binary classes&#10;Deleted property token&#10;New InvalidTokenError and InvalidValueError&#10;Deleted n_executions from QuantumModel&#10;Added validation of token in ibm execution&#10;Execution shots now with n_executions&#10;Added output of models&#10;Added documentacion, contact and error page&#10;Added unit tests&#10;Now use new simulators" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="614" y="115" key="CommitChangelistDialog2" timestamp="1650799047802">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="614" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1650799047802" />
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2" timestamp="1650799324384">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="254" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1650799324384" />
-    <state x="1136" y="356" key="com.intellij.ide.util.TipDialog" timestamp="1650795612415">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1136" y="356" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1650795612415" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test_Dataset.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test_IBMExecutor.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/extended/IBMExecutor.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/TFG_App$Flask__app_py_app_.coverage" NAME="Flask (app.py:app) Coverage Results" MODIFIED="1655639791520" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app_py$Flask__app_py_app_.coverage" NAME="Flask (app.py:app) Coverage Results" MODIFIED="1655901369191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app_py$Flask__src_base_app_py_app_.coverage" NAME="Flask (src/base/app.py:app) Coverage Results" MODIFIED="1655794879794" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app_py$.coverage" NAME=" Coverage Results" MODIFIED="1655901608925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
   </component>
 </project>
