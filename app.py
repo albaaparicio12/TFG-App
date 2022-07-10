@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
-from business.base.QMLAlgorithm import QMLAlgorithm
-from business.base.Validator import InvalidValueException, InvalidTokenException
+from src.business.base.QMLAlgorithm import QMLAlgorithm
+from src.business.base.Validator import InvalidValueException, InvalidTokenException
 
 app = Flask(__name__)
 
@@ -40,9 +40,9 @@ def resumen():
     token = request.form['token']
     dataset = request.form['dataset_model'].split(",")[0]
     ml_model = request.form['dataset_model'].split(",")[1]
-    salida = run(dataset, device, n_executions, token, ml_model)
+    salida, imagenes = run(dataset, device, n_executions, token, ml_model)
 
-    return render_template('resumen.html', salida=salida.values())
+    return render_template('resumen.html', salida=salida.values(), imagenes=imagenes)
 
 
 @app.route('/documentacion')

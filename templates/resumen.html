@@ -49,16 +49,15 @@
                     <textarea id="salida" name="salida" rows="20" cols="60" readonly>
                         {% for item in salida %}
                             {{item}}
-                        {% endfor %}}
+                        {% endfor %}
                     </textarea>
                 </div>
                 <div class="col">
+                    {% for imagen in imagenes %}
                     <div class="row">
-                        <img src='./static/files/grafo.png' width="100%" height="100%"/>
+                        <img src={{imagen}} width="100%" height="100%"/>
                     </div>
-                    <div class="row">
-                        <img src='./static/files/circuit.png' width="100%" height="100%"/>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

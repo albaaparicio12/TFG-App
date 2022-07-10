@@ -9,6 +9,11 @@ class Validator:
 
     @staticmethod
     def check_local_device(device: str):
+        """
+        Comprueba que el simulador introducido por parámetro existe y es válido.
+        :param device: nombre del simulador seleccionado.
+        :return: InvalidValueException en el caso de que no exista o sea inválido.
+        """
         if device not in [backend._options.get('method') for backend in Aer.backends()
                           if backend._options.get('method') != None] or device == 'stabilizer' \
                 or device == 'extended_stabilizer':
@@ -16,6 +21,11 @@ class Validator:
 
     @staticmethod
     def check_token(token: str):
+        """
+        Comprueba que el token introducido por parámetro pertenece a una cuenta válida.
+        :param token: token del usuario a comprobar.
+        :return: True si es válido o ya existe en el sistema, False en caso contrario.
+        """
         try:
             IBMQ.enable_account(token)
             return True
@@ -26,6 +36,11 @@ class Validator:
 
     @staticmethod
     def check_n_executions(n_executions: int):
+        """
+        Comprueba que el número de ejecuciones es un número entre 0 y 20000.
+        :param n_executions: número de ejecuciones introducidas por el usuario.
+        :return: InvalidValueException si el valor introducido se encuentra fuera del rango establecido.
+        """
         if n_executions <= 0 or n_executions >= 20000:
             raise InvalidValueException("The specified number of executions is invalid.", 2000)
 

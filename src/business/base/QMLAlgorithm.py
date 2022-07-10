@@ -1,9 +1,9 @@
-from business.base.Dataset import Dataset
+from src.business.base.Dataset import Dataset
 from src.business.extended.executors.LocalExecutor import LocalExecutor
 from src.business.extended.executors.IBMExecutor import IBMExecutor
 from src.business.extended.quantum_models.QSVCModel import QSVCModel
 from src.business.extended.quantum_models.QNNModel import QNNModel
-from business.base.Validator import InvalidValueException
+from src.business.base.Validator import InvalidValueException
 
 
 class QMLAlgorithm:
@@ -36,11 +36,25 @@ class QMLAlgorithm:
         return self._ml_model
 
     def run(self, token: str):
+        """
+        Ejecuta el algoritmo de aprendizaje automático cuántico.
+        :param token: token de la cuenta de IBM Quantum Experience del usuario necesaria en el caso de que la ejecución
+        se realice en IBM.
+        :return: Salida del algoritmo obtenida.
+        """
         quantum_model = self.create_quantum_model(token)
-        salida = quantum_model.run()
-        return salida
+        salida, imagenes = quantum_model.run()
+        return salida, imagenes
 
     def create_quantum_instance(self, token: str):
+        """
+        Crea el backend y la instancia del circuito en función del valor del atributo execution_type.
+        :param token: token de la cuenta de IBM Quantum Experience del usuario necesaria en el caso de que la ejecución
+        se realice en IBM.
+        :return: Una instancia del backend seleccionado y una instancia de QuantumInstance que proporciona la
+        configuración del circuito cuántico. InvalidValueException en el caso de que el valor de execution_type
+        sea inválido.
+        """
         if self.execution_type == 'local':
             backend, quantum_instance = LocalExecutor(self.device, self.n_executions).create_backend()
         elif self.execution_type == 'ibm':
@@ -50,6 +64,13 @@ class QMLAlgorithm:
         return backend, quantum_instance
 
     def create_quantum_model(self, token: str):
+        """
+        Crea el modelo del algoritmo de aprendizaje cuántico en función del valor del atributo ml_model.
+        :param token: token de la cuenta de IBM Quantum Experience del usuario necesaria en el caso de que la ejecución
+        se realice en IBM.
+        :return: Una instancia del modelo cuántico con el conjunto de datos y el backend seleccionados por el usuario.
+        InvalidValueException en el caso de que el valor de ml_model sea inválido.
+        """
         dataset = Dataset(self.dataset)
         backend, quantum_instance = self.create_quantum_instance(token)
         if self.ml_model == 'qsvm':

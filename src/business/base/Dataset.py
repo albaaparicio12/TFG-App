@@ -1,7 +1,10 @@
 from qiskit_machine_learning.datasets import ad_hoc_data, breast_cancer, gaussian
+import matplotlib
+
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
-from business.base.Validator import InvalidValueException
+from src.business.base.Validator import InvalidValueException
 
 
 class Dataset:
@@ -78,7 +81,7 @@ class Dataset:
         for k in range(0, 2):
             ax1.scatter(*x_total[y_total == k][:20].T)
         ax1.set_title("Ad-hoc Data")
-        plt.savefig('./static/files/grafo.png')
+        plt.savefig('./static/files/data.png')
 
     def plot_gaussian(self, sample_train, label_train):
         """ Crea el gráfico del conjunto de datos gaussian"""
@@ -90,7 +93,7 @@ class Dataset:
             )
 
         plt.title("Gaussians")
-        plt.savefig('./static/files/grafo.png')
+        plt.savefig('./static/files/data.png')
 
     def plot_breast_cancer(self, sample_train, label_train):
         """ Crea el gráfico del conjunto de datos breast_cancer"""
@@ -101,8 +104,8 @@ class Dataset:
                 sample_train[label_train == k, 1][:20],
             )
 
-        plt.title("PCA dim. reduced Breast cancer dataset")
-        plt.savefig('./static/files/grafo.png')
+        plt.title("Reduced breast cancer dataset")
+        plt.savefig('./static/files/data.png')
 
     def select_dataset(self):
         """

@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from business.base.Dataset import Dataset
+from src.business.base.Dataset import Dataset
 
 
 class QuantumModel(ABC):
@@ -20,4 +20,9 @@ class QuantumModel(ABC):
     @abstractmethod
     def run(self):
         """
+        Ejecuta el entrenamiento del modelo haciendo uso del conjunto de datos seleccionado previamente por el usuario.
+        Predice unos valores del conjunto y almacena los valores en una variable de salida junto con el porcentaje de
+        exactitud.
+
+        :return: list que contiene los resultados obtenidos
         """

@@ -1,14 +1,16 @@
+import os
+
 from sklearn import metrics
 import matplotlib.pyplot as plt
 from qiskit_machine_learning.algorithms import NeuralNetworkClassifier
 from qiskit_machine_learning.neural_networks import TwoLayerQNN
 # Import the optimizer for training the quantum kernel
 from IPython.display import clear_output
-from business.base.QuantumModel import QuantumModel
+from src.business.base.QuantumModel import QuantumModel
 from custom_inherit import doc_inherit
 # Import a quantum feature map
 from qiskit.circuit.library import ZZFeatureMap
-from qiskit.algorithms.optimizers import SPSA, GradientDescent
+from qiskit.algorithms.optimizers import SPSA
 
 
 class QNNModel(QuantumModel):
@@ -25,6 +27,7 @@ class QNNModel(QuantumModel):
     @doc_inherit(QuantumModel.run, style="google")
     def run(self):
         output = {}
+        os.remove('./static/files/grafo.png')
         # Get dataset
         X_train, y_train, X_test, y_test = self.dataset.get_data()
 
@@ -55,7 +58,8 @@ class QNNModel(QuantumModel):
         output['accuracy'] = f"Porcentaje de exactitud: {accuracy_test * 100}%"
         output['y_test'] = f"Valores reales: {y_test}"
         output['labels_test'] = f"Valores predecidos: {self.print_predicted(labels_test)}"
-        return output
+        imagenes = ['./static/files/grafo.png', './static/files/circuit.png']
+        return output, imagenes
 
     @staticmethod
     def print_predicted(labels) -> list:
@@ -74,6 +78,7 @@ class QNNModel(QuantumModel):
 
         clear_output(wait=True)
         self.objective_func_vals.append(obj_func_eval)
+        plt.close('all')
         plt.title("Objective function value against iteration")
         plt.xlabel("Iteration")
         plt.ylabel("Objective function value")

@@ -1,7 +1,7 @@
 from qiskit.circuit import ParameterVector
 from custom_inherit import doc_inherit
 import numpy as np
-from business.base.QuantumModel import QuantumModel
+from src.business.base.QuantumModel import QuantumModel
 
 # Package to evaluate model performance
 from sklearn import metrics
@@ -85,4 +85,5 @@ class QSVCModel(QuantumModel):
         output['labels_test'] = f"Valores predecidos: {labels_test}"
         print(y_test)
         print(labels_test)
-        return output
+        imagenes = ['./static/files/data.png', './static/files/circuit.png']
+        return output, imagenes

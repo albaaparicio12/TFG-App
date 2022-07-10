@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 class Executor(ABC):
     """Interfaz Executor.
 
-    Sirve para dar una estructura al backedn donde se vaya a ejecutar el modelo de aprendizaje auntomático.
+    Sirve para dar una estructura al backend donde se vaya a ejecutar el modelo de aprendizaje auntomático.
     """
 
     def __init__(self, device, n_executions) -> None:

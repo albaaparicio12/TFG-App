@@ -1,11 +1,11 @@
 from qiskit.utils import QuantumInstance
 
-from business.base.Executor import Executor
-from business.base.Validator import Validator
+from src.business.base.Executor import Executor
+from src.business.base.Validator import Validator
 from custom_inherit import doc_inherit
 from qiskit import IBMQ
 from qiskit.providers.ibmq import least_busy
-from business.base.Validator import InvalidTokenException
+from src.business.base.Validator import InvalidTokenException
 
 
 class IBMExecutor(Executor):
@@ -41,6 +41,12 @@ class IBMExecutor(Executor):
         return backend, quantum_instance
 
     def log_in_IBMQ(self, token: str):
+        """
+        Carga la cuenta de disco si el usuario ya se identificó previamente. En caso contrario intenta iniciar sesión
+        en IBM Quantum Experience con el token introducido por parámetro.
+        :param token: token de la cuenta de IBM Quantum Experience del usuario necesaria en el caso de que la ejecución
+        se realice en IBM.
+        """
         if self._authenticated:
             return IBMQ.load_account()
         else:
@@ -49,6 +55,15 @@ class IBMExecutor(Executor):
             self._authenticated = True
 
     def validate_token(self, token: str) -> bool:
+        """
+        Comprueba que el token introducido por parámetro es válido y se inicia sesión en IBM Quantum Experience.
+        Inicia sesión también en el caso de que el usuario ya se identificara previamente.
+
+        :param token: token de la cuenta de IBM Quantum Experience del usuario necesaria en el caso de que la ejecución
+        se realice en IBM.
+        :return: True si se identificó al usuario. InvalidTokenException en caso de que el token introducido sea
+        inválido y no se permita la autenticación.
+        """
         if self._authenticated or Validator.check_token(token):
             self.log_in_IBMQ(token)
             return True

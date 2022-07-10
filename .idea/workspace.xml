@@ -4,30 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57a9eb2a-515d-4b54-abc3-1c385f978290" name="Default Changelist" comment="Datasets only with binary classes&#10;Deleted property token&#10;New InvalidTokenError and InvalidValueError&#10;Deleted n_executions from QuantumModel&#10;Added validation of token in ibm execution&#10;Execution shots now with n_executions&#10;Added output of models&#10;Added documentacion, contact and error page&#10;Added unit tests&#10;Now use new simulators">
-      <change afterPath="$PROJECT_DIR$/static/files/EscudoUniovi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/flask.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/flask.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webResources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
+    <list default="true" id="57a9eb2a-515d-4b54-abc3-1c385f978290" name="Default Changelist" comment="Final version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/base/Dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/Executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/base/Executor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/QMLAlgorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/base/QMLAlgorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/QuantumModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/base/QuantumModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/base/Validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/base/Validator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extended/IBMExecutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/extended/executors/IBMExecutor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extended/LocalExecutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/extended/executors/LocalExecutor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extended/QNNModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/extended/quantum_models/QNNModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extended/QSVCModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/extended/quantum_models/QSVCModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contacto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/base/Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/base/Dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/base/Executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/base/Executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/base/QMLAlgorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/base/QMLAlgorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/base/QuantumModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/base/QuantumModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/base/Validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/base/Validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/extended/executors/IBMExecutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/extended/executors/IBMExecutor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/extended/executors/LocalExecutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/extended/executors/LocalExecutor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/extended/quantum_models/QNNModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/extended/quantum_models/QNNModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/extended/quantum_models/QSVCModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/extended/quantum_models/QSVCModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/files/TFG.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/static/files/TFG.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ejecucion.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ejecucion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/resumen.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resumen.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_Dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_Dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_IBMExecutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_IBMExecutor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_LocalExecutor.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_LocalExecutor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_QMLAlgorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_QMLAlgorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_QuantumModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_QuantumModel.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,6 +228,7 @@
       <workItem from="1657183685957" duration="5194000" />
       <workItem from="1657359571529" duration="16841000" />
       <workItem from="1657468720620" duration="694000" />
+      <workItem from="1657483495741" duration="6737000" />
     </task>
     <task id="LOCAL-00001" summary="Linked forms in qsvm and qnn">
       <created>1650799049132</created>
@@ -252,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655930223319</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Final version">
+      <created>1657483632448</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1657483632448</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +272,8 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Linked forms in qsvm and qnn" />
     <MESSAGE value="Datasets only with binary classes&#10;Deleted property token&#10;New InvalidTokenError and InvalidValueError&#10;Deleted n_executions from QuantumModel&#10;Added validation of token in ibm execution&#10;Execution shots now with n_executions&#10;Added output of models&#10;Added documentacion, contact and error page&#10;Added unit tests&#10;Now use new simulators" />
-    <option name="LAST_COMMIT_MESSAGE" value="Datasets only with binary classes&#10;Deleted property token&#10;New InvalidTokenError and InvalidValueError&#10;Deleted n_executions from QuantumModel&#10;Added validation of token in ibm execution&#10;Execution shots now with n_executions&#10;Added output of models&#10;Added documentacion, contact and error page&#10;Added unit tests&#10;Now use new simulators" />
+    <MESSAGE value="Final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
