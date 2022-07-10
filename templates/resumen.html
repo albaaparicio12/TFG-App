@@ -44,12 +44,23 @@
             <H1 style="text-align:center">Salida</H1>
         </div>
         <div class="row">
-            <textarea id="salida" name="salida" rows="20" cols="50" readonly>
-            {% for item in salida %}
-                {{item}}
-                {% endfor %}}
-            </textarea>
-            <img src='my_plot.png'/>
+            <div class="row align-items-start">
+                <div class="col">
+                    <textarea id="salida" name="salida" rows="20" cols="60" readonly>
+                        {% for item in salida %}
+                            {{item}}
+                        {% endfor %}}
+                    </textarea>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <img src='./static/files/grafo.png' width="100%" height="100%"/>
+                    </div>
+                    <div class="row">
+                        <img src='./static/files/circuit.png' width="100%" height="100%"/>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </main>

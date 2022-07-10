@@ -1,6 +1,6 @@
 from joblib.testing import fixture
 
-from base.Dataset import Dataset
+from business.base.Dataset import Dataset
 from qiskit_machine_learning.datasets import gaussian
 
 

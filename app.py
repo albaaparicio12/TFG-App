@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
-from src.base.QMLAlgorithm import QMLAlgorithm
-from src.base.Validator import InvalidValueException, InvalidTokenException
+from business.base.QMLAlgorithm import QMLAlgorithm
+from business.base.Validator import InvalidValueException, InvalidTokenException
 
 app = Flask(__name__)
 
@@ -24,8 +24,7 @@ def qnn():
 
 @app.route('/ejecucion', methods=["POST", "GET"])
 def ejecucion():
-    dispositivos = ['automatic', 'statevector', 'density_matrix', 'matrix_product_state',
-                    'unitary', 'superop']
+    dispositivos = ['automatic', 'statevector', 'density_matrix', 'matrix_product_state']
     if request.method == 'GET':
         dataset = request.args.get('dataset')
         tipoEjecucion = request.args.get('tipoEjecucion')

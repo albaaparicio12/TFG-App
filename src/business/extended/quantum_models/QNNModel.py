@@ -3,10 +3,12 @@ import matplotlib.pyplot as plt
 from qiskit_machine_learning.algorithms import NeuralNetworkClassifier
 from qiskit_machine_learning.neural_networks import TwoLayerQNN
 # Import the optimizer for training the quantum kernel
-from qiskit.algorithms.optimizers import COBYLA
 from IPython.display import clear_output
-from src.base.QuantumModel import QuantumModel
+from business.base.QuantumModel import QuantumModel
 from custom_inherit import doc_inherit
+# Import a quantum feature map
+from qiskit.circuit.library import ZZFeatureMap
+from qiskit.algorithms.optimizers import SPSA, GradientDescent
 
 
 class QNNModel(QuantumModel):
@@ -27,10 +29,14 @@ class QNNModel(QuantumModel):
         X_train, y_train, X_test, y_test = self.dataset.get_data()
 
         n_qubits = 2
-        opflow_qnn = TwoLayerQNN(n_qubits, quantum_instance=self._quantum_instance)
+
+        fm = ZZFeatureMap(n_qubits, reps=2)
+        opflow_qnn = TwoLayerQNN(n_qubits, feature_map=fm, quantum_instance=self._quantum_instance)
+        fm.decompose().draw(output="mpl", filename='./static/files/circuit.png')
 
         # construct neural network classifier
-        opflow_classifier = NeuralNetworkClassifier(opflow_qnn, callback=self.callback_graph)
+        opflow_classifier = NeuralNetworkClassifier(opflow_qnn, optimizer=SPSA(maxiter=30),
+                                                    callback=self.callback_graph)
 
         plt.rcParams["figure.figsize"] = (12, 6)
 
@@ -46,12 +52,22 @@ class QNNModel(QuantumModel):
         # Evalaute the test accuracy
         accuracy_test = metrics.balanced_accuracy_score(y_true=y_test, y_pred=labels_test)
         print(f"accuracy test: {accuracy_test}")
-        output['accuracy'] = f"accuracy test: {accuracy_test}"
-        output['y_test'] = f"y expected: {y_test}"
-        output['labels_test'] = f"y predicted: {labels_test}"
+        output['accuracy'] = f"Porcentaje de exactitud: {accuracy_test * 100}%"
+        output['y_test'] = f"Valores reales: {y_test}"
+        output['labels_test'] = f"Valores predecidos: {self.print_predicted(labels_test)}"
         return output
 
-    def callback_graph(self, weights, obj_func_eval):
+    @staticmethod
+    def print_predicted(labels) -> list:
+        result = ""
+        for item in labels:
+            if item[0] < 0:
+                result += "0 "
+            else:
+                result += "1 "
+        return [result]
+
+    def callback_graph(self, _, obj_func_eval):
         """
         Callback function that draws a live plot when the .fit() method is called
         """
@@ -62,5 +78,5 @@ class QNNModel(QuantumModel):
         plt.xlabel("Iteration")
         plt.ylabel("Objective function value")
         plt.plot(range(len(self.objective_func_vals)), self.objective_func_vals)
+        plt.savefig('./static/files/grafo.png')
         plt.show()
-        plt.savefig('my_plot.png')

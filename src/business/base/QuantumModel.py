@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from src.base.Dataset import Dataset
+from business.base.Dataset import Dataset
 
 
 class QuantumModel(ABC):

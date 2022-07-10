@@ -10,3 +10,4 @@ Flask-WTF
 pytest
 pytest-mock
 coverage
+pylatexenc

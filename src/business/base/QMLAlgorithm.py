@@ -1,9 +1,9 @@
-from src.base.Dataset import Dataset
-from src.extended.LocalExecutor import LocalExecutor
-from src.extended.IBMExecutor import IBMExecutor
-from src.extended.QSVCModel import QSVCModel
-from src.extended.QNNModel import QNNModel
-from src.base.Validator import InvalidValueException
+from business.base.Dataset import Dataset
+from src.business.extended.executors.LocalExecutor import LocalExecutor
+from src.business.extended.executors.IBMExecutor import IBMExecutor
+from src.business.extended.quantum_models.QSVCModel import QSVCModel
+from src.business.extended.quantum_models.QNNModel import QNNModel
+from business.base.Validator import InvalidValueException
 
 
 class QMLAlgorithm:

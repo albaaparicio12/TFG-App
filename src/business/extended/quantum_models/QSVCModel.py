@@ -1,8 +1,7 @@
 from qiskit.circuit import ParameterVector
-from qiskit.visualization import circuit_drawer
 from custom_inherit import doc_inherit
 import numpy as np
-from src.base.QuantumModel import QuantumModel
+from business.base.QuantumModel import QuantumModel
 
 # Package to evaluate model performance
 from sklearn import metrics
@@ -19,7 +18,7 @@ from qiskit_machine_learning.kernels.algorithms import QuantumKernelTrainer
 # Import the optimizer for training the quantum kernel
 from qiskit.algorithms.optimizers import SPSA
 
-from qiskit_machine_learning.algorithms import QSVC, PegasosQSVC
+from qiskit_machine_learning.algorithms import QSVC
 
 
 class QSVCModel(QuantumModel):
@@ -49,27 +48,26 @@ class QSVCModel(QuantumModel):
         # Create the feature map, composed of our two circuits
         fm = fm0.compose(fm1)
 
-        output['circuit'] = circuit_drawer(fm, style='mpl')
         output['parameters'] = f"Trainable parameters: {user_params}"
-        print(circuit_drawer(fm))
         print(f"Trainable parameters: {user_params}")
 
         # Instantiate quantum kernel
         quantum_kernel = QuantumKernel(fm, user_parameters=user_params, quantum_instance=self._backend)
-
+        fm.decompose().draw(output="mpl", filename='./static/files/circuit.png')
         """
         Since no analytical gradient is defined for kernel loss functions, gradient-based optimizers are not recommended for training kernels.
         """
+
+        optimizer = SPSA(maxiter=30, learning_rate=0.05, perturbation=0.05)
+
         # Instantiate a quantum kernel trainer.
         qkt = QuantumKernelTrainer(
-            quantum_kernel=quantum_kernel, loss="svc_loss", optimizer=SPSA(), initial_point=[np.pi / 2]
+            quantum_kernel=quantum_kernel, loss="svc_loss", optimizer=optimizer, initial_point=[np.pi / 2],
         )
 
         # Train the kernel using QKT directly
         qka_results = qkt.fit(X_train, y_train)
         optimized_kernel = qka_results.quantum_kernel
-        print(qka_results)
-        output['qka_results'] = qka_results
         # Use QSVC for classification
         qsvc = QSVC(quantum_kernel=optimized_kernel)
 
@@ -82,9 +80,9 @@ class QSVCModel(QuantumModel):
         # Evalaute the test accuracy
         accuracy_test = metrics.balanced_accuracy_score(y_true=y_test, y_pred=labels_test)
         print(f"accuracy test: {accuracy_test}")
-        output['accuracy'] = f"accuracy test: {accuracy_test}"
-        output['y_test'] = f"y expected: {y_test}"
-        output['labels_test'] = f"y predicted: {labels_test}"
+        output['accuracy'] = f"Porcentaje de exactitud: {accuracy_test * 100}%"
+        output['y_test'] = f"Valores reales: {y_test}"
+        output['labels_test'] = f"Valores predecidos: {labels_test}"
         print(y_test)
         print(labels_test)
         return output

@@ -1,11 +1,11 @@
 from qiskit.utils import QuantumInstance
 
-from src.base.Executor import Executor
-from src.base.Validator import Validator
+from business.base.Executor import Executor
+from business.base.Validator import Validator
 from custom_inherit import doc_inherit
 from qiskit import IBMQ
 from qiskit.providers.ibmq import least_busy
-from src.base.Validator import InvalidTokenException
+from business.base.Validator import InvalidTokenException
 
 
 class IBMExecutor(Executor):
@@ -35,7 +35,8 @@ class IBMExecutor(Executor):
                                                                 and x.status().operational == True)
 
         backend = least_busy(available_devices)
-        quantum_instance = QuantumInstance(backend, shots=self.n_executions, seed_simulator=seed, seed_transpiler=seed)
+        quantum_instance = QuantumInstance(backend, shots=int(self.n_executions), seed_simulator=seed,
+                                           seed_transpiler=seed)
 
         return backend, quantum_instance
 

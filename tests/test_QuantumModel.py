@@ -1,10 +1,10 @@
 from _pytest.fixtures import fixture
 
-from base.Dataset import Dataset
-from extended.IBMExecutor import IBMExecutor
-from extended.LocalExecutor import LocalExecutor
-from extended.QNNModel import QNNModel
-from extended.QSVCModel import QSVCModel
+from business.base.Dataset import Dataset
+from business.extended.executors.IBMExecutor import IBMExecutor
+from business.extended.executors.LocalExecutor import LocalExecutor
+from business.extended.quantum_models.QNNModel import QNNModel
+from business.extended.quantum_models.QSVCModel import QSVCModel
 
 
 @fixture

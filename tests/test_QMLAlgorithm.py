@@ -1,4 +1,4 @@
-from base.QMLAlgorithm import QMLAlgorithm
+from business.base.QMLAlgorithm import QMLAlgorithm
 from extended.QNNModel import QNNModel
 from extended.QSVCModel import QSVCModel
 
